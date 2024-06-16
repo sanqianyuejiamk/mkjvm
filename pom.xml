@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.taobao.mengka</groupId>
+	<artifactId>mkjvm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+
+
+
+
+		<!-- ***用来测试NoClassDefFoundError错误的jar包*** -->
+		<!-- <dependency> <groupId>com.taobao.mengka</groupId> <artifactId>mengka.hyy</artifactId> 
+			<version>0.0.1-SNAPSHOT</version> </dependency> -->
+		<!-- ************* 1.1.5.bugfix-SNAPSHOT -->
+
+		<dependency>
+			<groupId>com.sun.tools.btrace</groupId>
+			<artifactId>btrace-client</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.openjdk.btrace</groupId>-->
+			<!--<artifactId>btrace-client</artifactId>-->
+			<!--<version>2.0.3</version>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>com.mengka.common</groupId>
+			<artifactId>mengka-common</artifactId>
+			<version>1.0.2-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.0.5</version>
+		</dependency>
+
+		<!-- jol tool,analyze object layout schemes in JVMs -->
+		<!-- <dependency>
+			<groupId>org.openjdk.jol</groupId>
+			<artifactId>jol-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency -->
+		<!-- ****** -->
+		
+		
+	</dependencies>
+
+
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<encoding>GBK</encoding>
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>GBK</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-5</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>mengka.btrace_04.Taa</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
