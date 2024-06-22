@@ -7,14 +7,6 @@
 
 	<dependencies>
 
-
-
-
-		<!-- ***用来测试NoClassDefFoundError错误的jar包*** -->
-		<!-- <dependency> <groupId>com.taobao.mengka</groupId> <artifactId>mengka.hyy</artifactId> 
-			<version>0.0.1-SNAPSHOT</version> </dependency> -->
-		<!-- ************* 1.1.5.bugfix-SNAPSHOT -->
-
 		<dependency>
 			<groupId>com.sun.tools.btrace</groupId>
 			<artifactId>btrace-client</artifactId>
@@ -61,8 +53,8 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<encoding>GBK</encoding>
 				</configuration>
 			</plugin>
